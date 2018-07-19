@@ -1,0 +1,7 @@
+name: TuxBoard
+version: ${project.version}
+main: me.kingtux.tuxboard.TuxBoard
+prefix: TuxBoard
+authors: [KingTux]
+description: A new Way of Spigot Scoreboards
+website: https://kingtux.me
