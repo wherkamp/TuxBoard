@@ -8,4 +8,5 @@ import java.util.List;
 public class ScoreboardLine {
 
   private List<String> lines;
+
 }

@@ -1,0 +1,8 @@
+#Depending on what you set this too decides how the plugin does the plugin scrolling and updating.
+#Your options: single-runnable this will do everything in as little runnables as possible and multi-runnable this will put everything in multiple runnable
+method: single-runnable
+#Do not edit the following
+installed:
+   version: 1.0
+   installed:
+#Sorry that area could drop  your data if you edited it.
