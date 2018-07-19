@@ -8,5 +8,6 @@ import java.util.List;
 public class ScoreboardLine {
 
   private List<String> lines;
-
+  private boolean random;
+  private int interval;
 }

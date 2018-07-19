@@ -18,6 +18,7 @@ public class TuxScoreboardManager {
 
   private List<TuxScoreboard> scoreboardList;
   private TuxBoard tuxBoard;
+  private int scrollspeed;
   private static TuxScoreboardManager instance;
 
   public static TuxScoreboardManager getInstance() {
@@ -52,7 +53,7 @@ public class TuxScoreboardManager {
 
   }
 
-  public void registerScoreboard(TuxScoreboard tuxScoreboard) {
+  public void registerScoreboard(final TuxScoreboard tuxScoreboard) {
     if (scoreboardList.contains(tuxScoreboard)) {
       tuxBoard.getLogger().log(Level.WARNING, "Scoreboard already exists" + tuxScoreboard.getId());
       return;
@@ -64,14 +65,14 @@ public class TuxScoreboardManager {
     scoreboardList.add(tuxScoreboard);
   }
 
-  private void loadScoreboard(File file) {
+  private void loadScoreboard(final File file) {
     FileConfiguration fileConfiguration = YamlConfiguration.loadConfiguration(file);
     TuxScoreboard tuxScoreboard = null;
     registerScoreboard(tuxScoreboard);
 
   }
 
-  public void scoreboardPlayer(Player player) {
+  public void scoreboardPlayer(final Player player) {
     for (TuxScoreboard tuxScoreboard : scoreboardList) {
       if (player.hasPermission(tuxScoreboard.getPermission())) {
         Scoreboard scoreboard = buildScoreboard(player, tuxScoreboard);
@@ -85,6 +86,7 @@ public class TuxScoreboardManager {
 
   public Scoreboard buildScoreboard(final Player player, final TuxScoreboard tuxScoreboard) {
     ScoreboardSetEvent scoreboardSetEvent = new ScoreboardSetEvent(player, tuxScoreboard);
+    tuxBoard.getServer().getPluginManager().callEvent(scoreboardSetEvent);
     if (scoreboardSetEvent.isCancelled()) {
       return null;
     }

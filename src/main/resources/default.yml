@@ -1,0 +1,8 @@
+Scoreboard:
+   title:
+      lines:
+         - '&1Test &5Scoreboard &4of &2Life'
+      random: false
+      #This is to be in ticks. 20 ticks equal a second
+      interval: 20
+

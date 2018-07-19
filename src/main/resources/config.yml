@@ -1,6 +1,8 @@
 #Depending on what you set this too decides how the plugin does the plugin scrolling and updating.
 #Your options: single-runnable this will do everything in as little runnables as possible and multi-runnable this will put everything in multiple runnable
 method: single-runnable
+#This is to be in ticks. 20 ticks equal a second
+Scroll-speed: 10
 #Do not edit the following
 installed:
    version: 1.0

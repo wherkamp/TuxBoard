@@ -1,8 +1,6 @@
 package me.kingtux.tuxboard;
 
-import java.util.List;
 import me.kingtux.tuxboard.listeners.Events;
-import me.kingtux.tuxboard.scoreboard.TuxScoreboard;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class TuxBoard extends JavaPlugin {
@@ -13,6 +11,7 @@ public class TuxBoard extends JavaPlugin {
   public void onEnable() {
     loadEvents();
     tuxScoreboardManager = new TuxScoreboardManager(this);
+    tuxScoreboardManager.loadScoreboards();
   }
 
   @Override
